@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals match</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>🐮 Memory Game 🐷</h1>
+    <div class="stats">
+        <div id="move">Flips: <span id="movecount">0</span></div>
+        <div id="time">Time: 60</div>
+        <!-- Time: <span id="minutes">00</span>:<span id="seconds">00</span> -->
+        
+    </div>
+    <div class="row">    
+        <div class="card chicken img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card dog img-hidden" onclick="onclicked(event)" ></div>  
+        <div class="card cow img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card horse img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card parrot img-hidden" onclick="onclicked(event)" ></div> 
+    </div>
+    <div class="row">
+        <div class="card duck img-hidden" onclick="onclicked(event)" ></div>             
+        <div class="card tiger img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card pig img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card elephant img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card cat img-hidden" onclick="onclicked(event)" ></div> 
+    </div>
+    <div class="row">
+        <div class="card cow img-hidden" onclick="onclicked(event)" ></div>       
+        <div class="card horse img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card parrot img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card chicken img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card dog img-hidden" onclick="onclicked(event)" ></div> 
+    </div>
+    <div class="row">
+        <div class="card duck img-hidden" onclick="onclicked(event)" ></div>       
+        <div class="card tiger img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card pig img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card elephant img-hidden" onclick="onclicked(event)" ></div> 
+        <div class="card cat img-hidden" onclick="onclicked(event)" ></div> 
+    </div>
+
+    <div id="birds">
+    <div id="bird">
+        <img id="bird1" src="./images/bird.png">
+    </div>
+    <div id="secbird">
+        <img id="bird2" src="./images/bird.png">
+    </div>
+    </div>
+    <div class="game-container">
+    
+    </div>
+    <div class="control-container">
+        <p id="result"></p>
+        <button id="start">Start Game</button>
+        <button id="stop" class="hide">Stop Game</button>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

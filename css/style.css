@@ -1,0 +1,246 @@
+body {
+    background-image: url(../images/mountain.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    color: rgb(241, 211, 173);
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.row {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(242, 220, 192);
+    cursor: pointer;
+    /* transition: transform 0.7s ease-out; */
+    /* backface-visibility: hidden; */
+    border-radius: 18px;
+       
+}
+.card.match {
+    animation-name: shake;
+    animation-duration: 0.4s;
+}
+@keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(5deg);
+    }
+    40% {
+      transform: rotate(-5deg);
+    }
+    60% {
+      transform: rotate(5deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+.card.done {
+    cursor: default;
+    /* animation: flipUp .5s backwards; */
+    animation: flipDown .5s forwards;
+
+}
+
+.card.done:hover {
+    cursor: default;
+    box-shadow: none;
+}
+
+.card:hover {
+    box-shadow: inset 0px 0px 0px 2px rgb(77, 75, 75);
+    box-sizing: border-box;
+}
+
+@keyframes flipDown {
+    0%{
+      
+      transform: rotateY(180deg);
+      box-shadow: 2px 2px 0 0 #333;
+}
+    /* 100% {
+      
+      transform: rotateY(0deg);
+      box-shadow: -2px 2px 0 0 #333;
+    } */
+  }
+  
+  @keyframes flipUp {
+    0% {
+      
+      transform: rotateY(180deg);
+      box-shadow: -2px 2px 0 0 #333;
+    }
+    /* 100% {
+      
+      transform: rotateY(0deg);
+      box-shadow: 2px 2px 0 0 #333;
+    } */
+  }
+
+.tiger {
+    background-image: url(../images/tiger.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.duck {
+    background-image: url(../images/duck.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dog {
+    background-image: url(../images/dog.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cow {
+    background-image: url(../images/cow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.horse {
+    background-image: url(../images/horse.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chicken {
+    background-image: url(../images/chicken.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pig {
+    background-image: url(../images/pig.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parrot {
+    background-image: url(../images/parrot.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cat {
+    background-image: url(../images/cat.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.elephant {
+    background-image: url(../images/elephant.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img-hidden {
+    background-image: url(../images/question-mark1.png);
+    animation: flipUp .5s forwards;
+}
+
+.stats {
+    position: absolute;
+    left: 1250px;
+    top: 55px;
+    font-size: 25px;
+    color: rgb(37, 95, 79);
+    border: 1px solid rgb(241, 211, 173);
+    padding: 20px;
+    border-radius: 0.6rem;
+    background-color: rgb(241, 211, 173);
+}
+
+.control-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;  
+    
+}
+
+#start {
+    /* position: absolute; */
+    background-color: rgb(241, 211, 173);
+    font-size: 25px;
+    border-radius: 0.6rem;
+    margin-right: 30px;
+    padding: 8px;
+    
+}
+
+#stop {
+    background-color: rgb(241, 211, 173);
+    font-size: 25px;
+    border-radius: 0.6rem;
+    margin-left: 30px;
+    padding: 8px;
+}
+
+#music{
+    margin-bottom: 500px;
+}
+#bird {
+    position: absolute;
+    top: 240px;
+    left: 1200px;
+    animation: fly 13s;
+    animation-iteration-count: infinite;
+}
+
+#secbird {
+    position: absolute;
+    top: 300px;
+    left: 1330px;
+    animation: fly1 13s;
+    animation-iteration-count: infinite;
+}
+/* .control-container{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    top: 0; */
+    /* background-position: center;
+    background-size: cover; */
+/* } */
+
+@keyframes fly {
+    
+   0%   { left:85%; top:270px;}
+   25%  { left:83%; top:260px;}
+   50%  { left:81%; top:250px;}
+   75%  { left:79%; top:240px;}
+   100% { left:77%; top:230px;}
+
+}
+@keyframes fly1 {
+    
+    0%   { left:90%; top:280px;}
+    25%  { left:89%; top:270px;}
+    50%  { left:88%; top:260px;}
+    75%  { left:87%; top:250px;}
+    100% { left:85%; top:240px;}
+ 
+
+ }
