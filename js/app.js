@@ -48,6 +48,7 @@ cards.forEach(card => {
 function p1play(e){
     e.preventDefault()  
     alert('Welcome to my memory game!')
+    alert('The rule for two players, each player gets 2 flips for each time, whoever gets the match, click the player score button to add score manually!')
     animals.bgmusic.play()
     animals.startaudio.play()
     animals.seconds = 120   
@@ -67,9 +68,9 @@ function p1play(e){
        }, 500);
        }
     }, 1000);
-    if(matches === 10){
-        clearInterval(interval)
-    }
+    // if(matches === 10){
+    //     clearInterval(interval)
+    // }
 }
  p1btn.addEventListener('click', p1play)
 
@@ -100,8 +101,8 @@ const cardBIndex = parseInt(Math.random()* cards.length)
     console.log(cardBIndex)
     const cardB = cards[cardBIndex]
     console.log(cardB)
-    console.log(cards.splice(cardBIndex, 1))
-    console.log(cardB.className += ` ${image}`)
+    cards.splice(cardBIndex, 1)
+    cardB.className += ` ${image}`
     cardB.setAttribute('data-image', image)
     
 }
@@ -151,8 +152,7 @@ function onclicked(e){
             if(matches === 10){                       
                 setTimeout(() => {
                     animals.stopMusic()
-                    alert("Thank you for playing the game!")
-                   
+                    alert("Thank you for playing the game!")     
                     // location.reload()
                 }, 3000);
                 animals.winsound.play()
