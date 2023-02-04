@@ -17,3 +17,5 @@ Stretch Goals:
 I want to add a sound when the user wins or loses and whenever the user clicks on the image.
 
 <img width="1397" alt="Screenshot 2023-02-04 at 1 35 18 PM" src="https://user-images.githubusercontent.com/92937414/216783927-4c4b4770-8325-4737-b6db-1b75b606e261.png">
+
+test debugging sound effects
