@@ -178,7 +178,7 @@ h1 {
     
 }
 
-#start {
+#player1 {
     /* position: absolute; */
     background-color: rgb(241, 211, 173);
     font-size: 25px;
@@ -188,7 +188,7 @@ h1 {
     
 }
 
-#stop {
+#reset {
     background-color: rgb(241, 211, 173);
     font-size: 25px;
     border-radius: 0.6rem;
@@ -212,6 +212,29 @@ h1 {
     animation: fly1 13s;
     animation-iteration-count: infinite;
 }
+
+#board {
+    position: absolute;
+    top: 480px;
+    left: 1160px;
+    font-size: 20px;
+    border: 1px solid rgb(242, 220, 192);
+    padding-bottom: 22px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(242, 220, 192);
+    border-radius: 0.7rem;
+    color: rgb(65, 64, 64);
+}
+
+#add1{
+    background-color: rgb(242, 232, 219);
+}
+
+#add2{
+    background-color: rgb(242, 232, 219);
+}
+
 /* .control-container{
     position: absolute;
     display: flex;

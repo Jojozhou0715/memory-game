@@ -46,13 +46,8 @@ cards.forEach(card => {
 
 //player1 button
 function p1play(e){
-    e.preventDefault() 
-    player1start = true
-    player2start = false
+    e.preventDefault()  
     alert('Welcome to my memory game!')
-    let playersName = prompt("Enter player's name to play!")
-    document.querySelector('#name').innerHTML = playersName
-    // firstscore.innerHTML = `<span>${animals.flips++}</span>`
     animals.bgmusic.play()
     animals.startaudio.play()
     animals.seconds = 100   
@@ -63,14 +58,10 @@ function p1play(e){
     }
        if(animals.seconds < 0){
        clearInterval(interval)
-    //    animals.seconds = 0
-    //    animals.flips = 0
       setTimeout(() => {
         animals.gamoversound.play()
         animals.stopMusic()
         alert('You lost!')
-        // alert("It's next player's turn!")
-        // location.reload()
        }, 500);
        }
     }, 1000);
@@ -79,3 +70,109 @@ function p1play(e){
     }
 }
  p1btn.addEventListener('click', p1play)
+
+ const images = [
+    'cat',
+    'chicken',
+    'cow',
+    'duck',
+    'elephant',
+    'horse',
+    'tiger',
+    'parrot',
+    'pig',
+    'dog'
+]
+console.log(cards)
+
+for(let image of images){
+    console.log(image)
+const cardAIndex = parseInt(Math.random()* cards.length)
+    const cardA = cards[cardAIndex]
+    console.log(cardA)
+    cards.splice(cardAIndex, 1)
+    cardA.className += ` ${image}`
+    cardA.setAttribute('data-image', image)
+const cardBIndex = parseInt(Math.random()* cards.length)
+    console.log(cardBIndex)
+    const cardB = cards[cardBIndex]
+    console.log(cardB)
+    console.log(cards.splice(cardBIndex, 1))
+    console.log(cardB.className += ` ${image}`)
+    cardB.setAttribute('data-image', image)
+    
+}
+
+let clickedCard = null
+let preventClick = false
+let matches = 0
+
+//a function to click the cards
+function onclicked(e){
+    animals.clickaudio.play()   
+    const target = e.currentTarget
+    if(target === clickedCard || target.className.includes('done')){
+        return
+    }
+    target.className = target.className.replace('img-hidden', '').trim()
+    console.log(target.className)
+    console.log(target.getAttribute('data-image'))
+   target.className += ' done'
+    //if we havent clicked a card, keep track of the card, display it’s img
+     if(!clickedCard){
+       console.log(clickedCard = target)
+     }else if(clickedCard){
+         //if we have already clicked a card, check if the new card matches the old card
+        if(clickedCard.getAttribute('data-image') !== target.getAttribute('data-image')){
+           preventClick = true
+           setTimeout(() => {
+            clickedCard.className = clickedCard.className.replace('done', '').trim() + ' img-hidden'
+            target.className = target.className.replace('done', '').trim() + ' img-hidden'
+            clickedCard = null
+            preventClick = false
+           }, 400);
+            console.log(target.getAttribute('data-image'))
+            console.log(clickedCard.getAttribute('data-image'))
+            console.log('cards are  not equal')
+        }else{
+            console.log(target.getAttribute('data-image'))
+            console.log(clickedCard.getAttribute('data-image'))
+            console.log('cards are equal')
+            animals.mathchsound.play()
+            clickedCard.className = clickedCard.className.replace('done', '').trim() + ' match'
+            target.className = target.className.replace('done', '').trim() + ' match'
+            matches++
+            console.log(matches)
+            clickedCard = null
+            if(matches === 10){                       
+                setTimeout(() => {
+                    animals.stopMusic()
+                    alert("Thank you for playing the game!")
+                   
+                    // location.reload()
+                }, 3000);
+                animals.winsound.play()
+                
+            }
+        }
+    }
+}
+
+function resetGame(){
+    animals.startaudio.play()
+    animals.stopMusic()
+    totaltime.innerHTML = `Time: <span>60</span>`
+    location.reload()
+    }
+ resetbtn.addEventListener('click', resetGame)
+
+ const player1Score = document.getElementById("score1");
+ const player2Score = document.getElementById("score2");
+ const add1Btn = document.getElementById("add1");
+ const add2Btn = document.getElementById("add2");
+ add1Btn.addEventListener("click", function() {
+   player1Score.textContent = parseInt(player1Score.textContent) + 1;
+ });
+ add2Btn.addEventListener("click", function() {
+   player2Score.textContent = parseInt(player2Score.textContent) + 1;
+ });
