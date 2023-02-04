@@ -50,9 +50,11 @@ function p1play(e){
     alert('Welcome to my memory game!')
     animals.bgmusic.play()
     animals.startaudio.play()
-    animals.seconds = 100   
+    animals.seconds = 120   
+   
    const interval = setInterval(()=>{
        timer.innerHTML = animals.seconds --
+       
        if(matches === 10){
         clearInterval(interval)
     }
@@ -111,6 +113,7 @@ let matches = 0
 function onclicked(e){
     animals.clickaudio.play()   
     const target = e.currentTarget
+    movescount.innerHTML = animals.flips ++
     if(target === clickedCard || target.className.includes('done')){
         return
     }
