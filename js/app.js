@@ -1,4 +1,4 @@
-class game {
+class Game {
     constructor(){
         this.moves = 0;
         this.seconds = 100;
@@ -20,7 +20,7 @@ class game {
         this.moves ++
     }
 }
-const animals = new game()
+const animals = new Game()
 
 const p1btn = document.querySelector('#player1')
 const p2btn = document.querySelector('#player2')
@@ -35,8 +35,8 @@ const firstscore = document.querySelector('#score1')
 const secondscore = document.querySelector('#score2')
 const cards = [...document.querySelectorAll('.card')]
 
-let player1start = false
-let player2start = false
+// let player1start = false
+// let player2start = false
 
 cards.forEach(card => {
     card.addEventListener('click', ()=>{
@@ -87,6 +87,7 @@ function p1play(e){
 ]
 console.log(cards)
 
+//to get ramdom images of card
 for(let image of images){
     console.log(image)
 const cardAIndex = parseInt(Math.random()* cards.length)
@@ -161,6 +162,7 @@ function onclicked(e){
     }
 }
 
+//a function for a reset button
 function resetGame(){
     animals.startaudio.play()
     animals.stopMusic()
@@ -169,6 +171,7 @@ function resetGame(){
     }
  resetbtn.addEventListener('click', resetGame)
 
+ //created a two player scoreboard
  const player1Score = document.getElementById("score1");
  const player2Score = document.getElementById("score2");
  const add1Btn = document.getElementById("add1");
