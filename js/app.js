@@ -51,7 +51,7 @@ function p1play(e){
     alert('The rule for two players, each player gets 2 flips for each time, whoever gets the match, click the player score button to add score manually!')
     animals.bgmusic.play()
     animals.startaudio.play()
-    animals.seconds = 120   
+    animals.seconds = 100  
    
    const interval = setInterval(()=>{
        timer.innerHTML = animals.seconds --
