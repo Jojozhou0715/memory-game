@@ -115,6 +115,7 @@ h1 {
 }
 
 .stats {
+    /* text-align: left; */
     position: absolute;
     left: 1220px;
     top: 55px;
@@ -244,8 +245,8 @@ h1 {
    50%  { left:81%; top:250px;}
    75%  { left:79%; top:240px;}
    100% { left:77%; top:230px;}
-
 }
+
 @keyframes fly1 {
     
     0%   { left:90%; top:280px;}
@@ -253,6 +254,21 @@ h1 {
     50%  { left:88%; top:260px;}
     75%  { left:87%; top:250px;}
     100% { left:85%; top:240px;}
- 
+ }
+
+ @media screen and (min-width: 1500px){
+    .stats{
+        position: absolute;
+        left: 1720px;
+        top: 55px;
+    }
+    #board{
+        position: absolute;
+        top: 480px;
+        left: 1660px;
+    }
+
 
  }
+    
+ 
