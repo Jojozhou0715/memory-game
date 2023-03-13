@@ -256,7 +256,7 @@ h1 {
     100% { left:85%; top:240px;}
  }
 
- @media screen and (min-width: 1500px){
+ @media screen and (min-width: 1650px){
     .stats{
         position: absolute;
         left: 1720px;
